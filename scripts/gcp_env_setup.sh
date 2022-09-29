@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Run the following ONE-TIME-SCRIPT which creates and provisions the necessary GCP cloud services that will be required to create the DevSecOps CICD pipeline for a sample docker application. Here's all the service deployments that will occur once the script finishes:
+#Run the following ONE-TIME-SCRIPT which creates and provisions the necessary GCP cloud services that will be required to create the DevSecOps cicd pipeline for a sample docker application. Here's all the service deployments that will occur once the script finishes:
 
 #Author: Anjali Khatri & Nitin Vashishtha
 
@@ -26,7 +26,7 @@ BINAUTHZ_SA_EMAIL="service-${PROJECT_NUMBER}@gcp-sa-binaryauthorization.iam.gser
 #Create the following custom IAM role
 gcloud iam roles create cicdblogrole --project=${PROJECT_ID} \
     --title="cicdblogrole" \
-    --description="Custom Role for GCP CICD Blog" \
+    --description="Custom Role for GCP cicd Blog" \
     --permissions="artifactregistry.repositories.create,container.clusters.get,binaryauthorization.attestors.get,binaryauthorization.attestors.list,binaryauthorization.policy.update,clouddeploy.deliveryPipelines.get,clouddeploy.releases.get,cloudkms.cryptoKeyVersions.useToSign,cloudkms.cryptoKeyVersions.viewPublicKey,containeranalysis.notes.attachOccurrence,containeranalysis.notes.create,containeranalysis.notes.listOccurrences,containeranalysis.notes.setIamPolicy,iam.serviceAccounts.actAs,ondemandscanning.operations.get,ondemandscanning.scans.analyzePackages,ondemandscanning.scans.listVulnerabilities,serviceusage.services.enable,storage.objects.get" \
     --stage=Beta
 
@@ -135,7 +135,7 @@ gcloud container binauthz attestors list
 gcloud artifacts repositories create cicd-repo \
     --repository-format=Docker \
     --location=europe-west3 \
-    --description="Artifact Registry for GCP DevSecOps CICD Blog" \
+    --description="Artifact Registry for GCP DevSecOps cicd Blog" \
     --async
 
 #Create two Pub/Sub topics for email approval notification and error logging

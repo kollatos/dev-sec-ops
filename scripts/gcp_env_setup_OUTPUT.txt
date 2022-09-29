@@ -9,7 +9,7 @@ Operation "operations/acat.p2-PROJECT_NUMBER-a76fd095-a317-440b-9112-9a7168ba5d4
 Operation "operations/acat.p2-PROJECT_NUMBER-86e5b0b8-32e4-462c-9d97-5e57ac0be567" finished successfully.
 Operation "operations/acf.p2-PROJECT_NUMBER-03e181a5-dadd-494a-8eaa-28849319941f" finished successfully.
 Created role [cicdblogrole].
-description: Custom Role for GCP CICD Blog
+description: Custom Role for GCP cicd Blog
 etag: BwXnU0fZ85Y=
 includedPermissions:
 - artifactregistry.repositories.create
