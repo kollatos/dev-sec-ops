@@ -298,9 +298,9 @@ instances as well as SSH, RDP, and ICMP by running:
 $ gcloud compute firewall-rules create <FIREWALL_NAME> --network default --allow tcp,udp,icmp --source-ranges <IP_RANGE>
 $ gcloud compute firewall-rules create <FIREWALL_NAME> --network default --allow tcp:22,tcp:3389,icmp
 
-Created [https://www.googleapis.com/compute/v1/projects/PROJECT_ID/regions/us-central1/subnetworks/default].
+Created [https://www.googleapis.com/compute/v1/projects/PROJECT_ID/regions/europe-west3/subnetworks/default].
 NAME: default
-REGION: us-central1
+REGION: europe-west3
 NETWORK: default
 RANGE: 10.128.0.0/20
 STACK_TYPE: IPV4_ONLY
@@ -342,14 +342,14 @@ NAME: cb-attestor
 NOTE: projects/PROJECT_ID/notes/cb-attestor-note
 NUM_PUBLIC_KEYS: 1
 Create request issued for: [test-repo]
-Check operation [projects/PROJECT_ID/locations/us-central1/operations/e6afa3fb-5767-4e52-a402-e94d78d87b30] for status.
+Check operation [projects/PROJECT_ID/locations/europe-west3/operations/e6afa3fb-5767-4e52-a402-e94d78d87b30] for status.
 Created topic [projects/PROJECT_ID/topics/clouddeploy-approvals].
 Deploying function (may take a while - up to 2 minutes)...working..
-For Cloud Build Logs, visit: https://console.cloud.google.com/cloud-build/builds;region=us-central1/94b30fc4-b2e4-4666-8549-e81fef63a304?project=PROJECT_ID
+For Cloud Build Logs, visit: https://console.cloud.google.com/cloud-build/builds;region=europe-west3/94b30fc4-b2e4-4666-8549-e81fef63a304?project=PROJECT_ID
 Deploying function (may take a while - up to 2 minutes)...done.
 availableMemoryMb: 256
 buildId: 94b30fc4-b2e4-4666-8549-e81fef63a304
-buildName: projects/PROJECT_NUMBER/locations/us-central1/builds/94b30fc4-b2e4-4666-8549-e81fef63a304
+buildName: projects/PROJECT_NUMBER/locations/europe-west3/builds/94b30fc4-b2e4-4666-8549-e81fef63a304
 dockerRegistry: CONTAINER_REGISTRY
 entryPoint: cloudDeployApproval
 environmentVariables:
@@ -364,10 +364,10 @@ eventTrigger:
 ingressSettings: ALLOW_ALL
 labels:
   deployment-tool: cli-gcloud
-name: projects/PROJECT_ID/locations/us-central1/functions/my-blog-function
+name: projects/PROJECT_ID/locations/europe-west3/functions/my-blog-function
 runtime: nodejs16
 serviceAccountEmail: PROJECT_ID@appspot.gserviceaccount.com
-sourceUploadUrl: https://storage.googleapis.com/uploads-115308208805.us-central1.cloudfunctions.appspot.com/5f6dd5a2-bd5c-4d25-9826-147b4aa55ef7.zip
+sourceUploadUrl: https://storage.googleapis.com/uploads-115308208805.europe-west3.cloudfunctions.appspot.com/5f6dd5a2-bd5c-4d25-9826-147b4aa55ef7.zip
 status: ACTIVE
 timeout: 60s
 updateTime: '2022-08-28T20:52:11.527Z'
@@ -375,45 +375,45 @@ versionId: '1'
 Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. To create advanced routes based clusters, please pass the `--no-enable-ip-alias` flag
 Default change: During creation of nodepools or autoscaling configuration changes for cluster versions greater than 1.24.1-gke.800 a default location policy is applied. For Spot and PVM it defaults to ANY, and for all other VM kinds a BALANCED policy is used. To change the default values use the `--location-policy` flag.
 Note: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s).
-Creating cluster test in us-central1... Cluster is being health-checked (master is healthy)...done.
-Created [https://container.googleapis.com/v1/projects/PROJECT_ID/zones/us-central1/clusters/test].
-To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/us-central1/test?project=PROJECT_ID
+Creating cluster test in europe-west3... Cluster is being health-checked (master is healthy)...done.
+Created [https://container.googleapis.com/v1/projects/PROJECT_ID/zones/europe-west3/clusters/test].
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/europe-west3/test?project=PROJECT_ID
 kubeconfig entry generated for test.
 NAME: test
-LOCATION: us-central1
+LOCATION: europe-west3
 MASTER_VERSION: 1.22.11-gke.400
 MASTER_IP: 34.170.179.137
-MACHINE_TYPE: n1-standard-2
+MACHINE_TYPE: e2-small
 NODE_VERSION: 1.22.11-gke.400
 NUM_NODES: 3
 STATUS: RUNNING
 Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. To create advanced routes based clusters, please pass the `--no-enable-ip-alias` flag
 Default change: During creation of nodepools or autoscaling configuration changes for cluster versions greater than 1.24.1-gke.800 a default location policy is applied. For Spot and PVM it defaults to ANY, and for all other VM kinds a BALANCED policy is used. To change the default values use the `--location-policy` flag.
 Note: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s).
-Creating cluster staging in us-central1... Cluster is being health-checked (master is healthy)...done.
-Created [https://container.googleapis.com/v1/projects/PROJECT_ID/zones/us-central1/clusters/staging].
-To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/us-central1/staging?project=PROJECT_ID
+Creating cluster staging in europe-west3... Cluster is being health-checked (master is healthy)...done.
+Created [https://container.googleapis.com/v1/projects/PROJECT_ID/zones/europe-west3/clusters/staging].
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/europe-west3/staging?project=PROJECT_ID
 kubeconfig entry generated for staging.
 NAME: staging
-LOCATION: us-central1
+LOCATION: europe-west3
 MASTER_VERSION: 1.22.11-gke.400
 MASTER_IP: 35.239.179.38
-MACHINE_TYPE: n1-standard-2
+MACHINE_TYPE: e2-small
 NODE_VERSION: 1.22.11-gke.400
 NUM_NODES: 3
 STATUS: RUNNING
 Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. To create advanced routes based clusters, please pass the `--no-enable-ip-alias` flag
 Default change: During creation of nodepools or autoscaling configuration changes for cluster versions greater than 1.24.1-gke.800 a default location policy is applied. For Spot and PVM it defaults to ANY, and for all other VM kinds a BALANCED policy is used. To change the default values use the `--location-policy` flag.
 Note: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s).
-Creating cluster prod in us-central1... Cluster is being health-checked (master is healthy)...done.
-Created [https://container.googleapis.com/v1/projects/PROJECT_ID/zones/us-central1/clusters/prod].
-To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/us-central1/prod?project=PROJECT_ID
+Creating cluster prod in europe-west3... Cluster is being health-checked (master is healthy)...done.
+Created [https://container.googleapis.com/v1/projects/PROJECT_ID/zones/europe-west3/clusters/prod].
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/europe-west3/prod?project=PROJECT_ID
 kubeconfig entry generated for prod.
 NAME: prod
-LOCATION: us-central1
+LOCATION: europe-west3
 MASTER_VERSION: 1.22.11-gke.400
 MASTER_IP: 104.155.138.65
-MACHINE_TYPE: n1-standard-2
+MACHINE_TYPE: e2-small
 NODE_VERSION: 1.22.11-gke.400
 NUM_NODES: 3
 STATUS: RUNNING
