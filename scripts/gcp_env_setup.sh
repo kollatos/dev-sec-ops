@@ -14,7 +14,7 @@ gcloud services enable artifactregistry.googleapis.com
 gcloud services enable containerscanning.googleapis.com
 gcloud services enable clouddeploy.googleapis.com
 gcloud services enable cloudkms.googleapis.com
-gcloud services enable cloudfunctions.googleapis.com
+#gcloud services enable cloudfunctions.googleapis.com
 
 #GCP Project Variables
 LOCATION=europe-west3
@@ -50,7 +50,7 @@ gcloud projects add-iam-policy-binding ${PROJECT_ID} \
 #Create a Default VPC and its embedded Subnet. This is under the assumption that the new GCP project did NOT automatically create a default VPC and Subnet.
 #If the creation of a default VPC is not needed, comment out the following 3 commands.
 
-SUBNET_RANGE=10.128.0.0/20
+SUBNET_RANGE=10.123.0.0/20
 gcloud compute networks create default --subnet-mode=custom --bgp-routing-mode=regional --mtu=1460
 gcloud compute networks subnets create default --project=$PROJECT_ID --range=$SUBNET_RANGE --network=default --region=$LOCATION
 
@@ -139,26 +139,26 @@ gcloud artifacts repositories create cicd-repo \
     --async
 
 #Create two Pub/Sub topics for email approval notification and error logging
-gcloud pubsub topics create clouddeploy-approvals
-gcloud pubsub topics create clouddeploy-operations
+#gcloud pubsub topics create clouddeploy-approvals
+#gcloud pubsub topics create clouddeploy-operations
 
 #Create Cloud Function for email approval notification to deploy any worloads to productions
-gcloud functions deploy cd-approval \
-  --region=europe-west3 \
-  --runtime=nodejs16 \
-  --source=./cloud-function \
-  --entry-point=cloudDeployApproval \
-  --trigger-topic=clouddeploy-approvals \
-  --env-vars-file env.yaml
+#gcloud functions deploy cd-approval \
+#  --region=europe-west3 \
+#  --runtime=nodejs16 \
+#  --source=./cloud-function \
+#  --entry-point=cloudDeployApproval \
+#  --trigger-topic=clouddeploy-approvals \
+#  --env-vars-file env.yaml
 
 #Create Cloud Function for email notification if the workload deployment fails 
-gcloud functions deploy cd-deploy-notification \
-  --region=europe-west3 \
-  --runtime=nodejs16 \
-  --source=./cloud-function/deployment-notification \
-  --entry-point=cloudDeployStatus \
-  --trigger-topic=clouddeploy-operations \
-  --env-vars-file env.yaml
+#gcloud functions deploy cd-deploy-notification \
+#  --region=europe-west3 \
+#  --runtime=nodejs16 \
+#  --source=./cloud-function/deployment-notification \
+#  --entry-point=cloudDeployStatus \
+#  --trigger-topic=clouddeploy-operations \
+#  --env-vars-file env.yaml
   
 #Create three GKE clusters for test, staging and production. The Node.js docker image will be deployed as a release through the Cloud Deploy pipeline first in "dev". Next, the image deployment will be rolled to the "staging" cluster and once its successful, pending approval, the final image roll-out will deploy to the "prod" cluster.
 #NOTE: If you're using a different VPC, ensure you change the --subnetwork config value to match against your VPC subnet
