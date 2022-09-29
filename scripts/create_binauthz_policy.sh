@@ -12,7 +12,7 @@ GKE_BA_Policy_Staging=$LOCATION.$GKE_Staging_Cluster_Name
 GKE_BA_Policy_Prod=$LOCATION.$GKE_Prod_Cluster_Name
 
 #Container Image stored in Artifact Registry
-REPO_NAME=test-repo
+REPO_NAME=cicd-repo
 DIGEST_CONTAINER_PATH=$LOCATION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/cd
 REVISION_ID=$(gcloud container images list-tags $DIGEST_CONTAINER_PATH --format='value(tags)' --limit=1)
 CONTAINER_PATH=$LOCATION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/cd:$REVISION_ID

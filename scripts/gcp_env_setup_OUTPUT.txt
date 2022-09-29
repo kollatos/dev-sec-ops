@@ -341,7 +341,7 @@ pkixPublicKey:
 NAME: cb-attestor
 NOTE: projects/PROJECT_ID/notes/cb-attestor-note
 NUM_PUBLIC_KEYS: 1
-Create request issued for: [test-repo]
+Create request issued for: [cicd-repo]
 Check operation [projects/PROJECT_ID/locations/europe-west3/operations/e6afa3fb-5767-4e52-a402-e94d78d87b30] for status.
 Created topic [projects/PROJECT_ID/topics/clouddeploy-approvals].
 Deploying function (may take a while - up to 2 minutes)...working..

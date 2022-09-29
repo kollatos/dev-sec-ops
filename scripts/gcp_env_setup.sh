@@ -132,7 +132,7 @@ gcloud beta container binauthz attestors public-keys add  \
 gcloud container binauthz attestors list
 
 #Create Artifact Registry Repository where images will be stored
-gcloud artifacts repositories create test-repo \
+gcloud artifacts repositories create cicd-repo \
     --repository-format=Docker \
     --location=europe-west3 \
     --description="Artifact Registry for GCP DevSecOps CICD Blog" \
