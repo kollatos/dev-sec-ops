@@ -55,12 +55,12 @@ steps:
      args:
       - -c
       - |
-        gcloud deploy releases create r-$REVISION_ID --project=$PROJECT_ID --region=europe-west3 --delivery-pipeline=ci-cd-test --images=notes-app-image=europe-west3-docker.pkg.dev/$PROJECT_ID/$_CONTAINER_REPO_NAME/cd@$(cat /workspace/digest.txt)
+        gcloud deploy releases create r-$REVISION_ID --project=$PROJECT_ID --region=europe-west3 --delivery-pipeline=CICD --images=notes-app-image=europe-west3-docker.pkg.dev/$PROJECT_ID/$_CONTAINER_REPO_NAME/cd@$(cat /workspace/digest.txt)
    - id: Promote/deploy cloud deploy release to next stage ie staging  
      name: gcr.io/cloud-builders/gcloud
-     args: ['deploy', 'releases', 'promote', '--release=r-$REVISION_ID','--project=$PROJECT_ID','--region=europe-west3','--delivery-pipeline=ci-cd-test', '--to-target=staging']
+     args: ['deploy', 'releases', 'promote', '--release=r-$REVISION_ID','--project=$PROJECT_ID','--region=europe-west3','--delivery-pipeline=CICD', '--to-target=staging']
    - id: Promote/deploy cloud deploy release to next stage ie prod 
      name: gcr.io/cloud-builders/gcloud
-     args: ['deploy', 'releases', 'promote', '--release=r-$REVISION_ID','--project=$PROJECT_ID','--region=europe-west3','--delivery-pipeline=ci-cd-test', '--to-target=prod']
+     args: ['deploy', 'releases', 'promote', '--release=r-$REVISION_ID','--project=$PROJECT_ID','--region=europe-west3','--delivery-pipeline=CICD', '--to-target=prod']
 images: ['europe-west3-docker.pkg.dev/$PROJECT_ID/$_CONTAINER_REPO_NAME/cd:$REVISION_ID']
 

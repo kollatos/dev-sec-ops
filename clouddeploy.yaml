@@ -1,7 +1,7 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
- name: ci-cd-test
+ name: CICD
 description: main application pipeline
 serialPipeline:
  stages:
@@ -19,7 +19,7 @@ metadata:
  name: test
 description: development cluster
 gke:
- cluster: projects/<<PROJECT_ID>>/locations/europe-west3/clusters/test #Update with your product ID instead of <<PROJECT_ID>>
+ cluster: projects/sandbox-362511/locations/europe-west3/clusters/test #Update with your product ID
 ---
 
 
@@ -29,7 +29,7 @@ metadata:
  name: staging
 description: staging cluster
 gke:
- cluster: projects/<<PROJECT_ID>>/locations/europe-west3/clusters/staging #Update with your product ID instead of <<PROJECT_ID>>
+ cluster: projects/sandbox-362511/locations/europe-west3/clusters/staging #Update with your product ID
 ---
 
 apiVersion: deploy.cloud.google.com/v1
@@ -39,4 +39,4 @@ metadata:
 description: production cluster
 requireApproval: true
 gke:
- cluster: projects/<<PROJECT_ID>>/locations/europe-west3/clusters/prod #Update with your product ID instead of <<PROJECT_ID>>
+ cluster: projects/sandbox-362511/locations/europe-west3/clusters/prod #Update with your product ID
